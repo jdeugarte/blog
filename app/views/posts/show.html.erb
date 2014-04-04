@@ -1,0 +1,27 @@
+<div class="center hero-unit">
+ <%= @post.title%><br/>
+ <%= @post.text%><br/>
+ <%= @post.likes%> Likes<br/> 
+ <a href="/posts/liked/<%=@post.id.to_s%>" class="btn btn-large btn-primary">Like</a>
+ <h2>Comentarios</h2>
+ <% @post.comments.each do |c| %>
+ 	<%=c.commenter%><br/>
+ 	<%=c.body%><br/>
+ 	Creado: <%=c.created_at%><br/>
+
+ <% end %>
+ <h2> Anadir comentario</h2>
+ <%=form_for ([@post,@post.comments.build]) do |f|%>
+ <p>
+    <%= f.label :comentador %>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :cuerpo %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+ <%end%>
+</div>

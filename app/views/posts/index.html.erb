@@ -1,0 +1,22 @@
+
+<div class="center hero-unit">
+  <h1>Posts</h1>
+	<% if @posts.length == 0%>
+		<p>No hay posts</p>
+		<%else%>
+
+		<% @posts.each do |p|%>
+
+			<h4><a href="/posts/show/<%= p.id %>"><%=p.title%></a></h4>
+			<%=p.text%><br/>
+			<%=p.likes%> Likes<br/>
+			<p style="font-size: .8em">Creado: <%=p.created_at%></p>
+			
+			<!--<a href="#" class="btn btn-large btn-primary">Sign up now!</a>-->
+		<a href="/posts/delete/<%= p.id.to_s %>" class="btn btn-large btn-primary">Borrar</a></td>
+		<a href="/posts/update/<%= p.id.to_s %>" class="btn btn-large btn-primary">Modificar</a></td>
+		<a href="/posts/like/<%=p.id.to_s%>" class="btn btn-large btn-primary">Like</a>
+		<%end%>
+	<%end%>
+</div>
+

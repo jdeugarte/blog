@@ -1,0 +1,24 @@
+<div class="center hero-unit">
+	<table border="3">
+	<tr>
+		<td>ID</td>
+		<td>Titulo</td>
+		<td>Fecha de Creacion</td>
+		<td>Fecha de Modificacion</td>
+		<td>Numero Comentarios</td>
+		<td>Numero Likes</td>
+		<td>Cantidad de Palabras</td>
+	</tr>
+	 <% @posts.each do |p| %>
+	 	<tr>
+	 	<td><%=p.id%></td>
+	 	<td><%=p.title%></td>
+	 	<td><%=p.created_at%></td>
+	 	<td><%=p.updated_at%></td>
+	 	<td><%=p.comments.count%></td>
+	 	<td><%=p.likes%></td>
+	 	<td><%=p.text.gsub(/[^0-9A-Za-z ]/,'').split.count%></td>
+	 	</tr>
+	 <% end %>
+	</table>
+</div>

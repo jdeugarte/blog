@@ -1,0 +1,12 @@
+
+<div class="center hero-unit">
+<%= form_for :post,url: {:controller => :posts, :action => 'edit'} do |f|%>
+	<h2><%= f.label :titulo %></h2>
+	<%= f.text_field :title %>
+
+	<h2><%= f.label :texto %></h2>
+	<%= f.text_area :text %><br/>
+
+	<%= f.submit :Modificar%>
+<% end %>
+</div>
