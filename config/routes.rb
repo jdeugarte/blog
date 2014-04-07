@@ -3,7 +3,9 @@ Blog::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
   root 'posts#index'
+  get '/posts/search'=>'posts#search'
   get '/posts' =>'posts#index'
   post '/posts/create' => 'posts#create'
   get '/posts/crear' => 'posts#crear'
@@ -12,7 +14,7 @@ Blog::Application.routes.draw do
   get '/posts/delete/:id' => 'posts#delete'
   get '/posts/like/:id' => 'posts#like'
   get '/posts/liked/:id' => 'posts#liked'
-  get '/posts/search/:word' => 'post#search'
+  get '/posts/search' => 'post#search'
   get '/posts/show/:id' => 'posts#show'
 
 

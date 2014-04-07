@@ -27,7 +27,7 @@ class PostsController < ApplicationController
 	end
 	
 	def search
-			
+		@posts = Post.all	
 	end	
 	
 	def create

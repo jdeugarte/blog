@@ -1,0 +1,16 @@
+<div class="center hero-unit">
+	<h1>Resultados</h1>
+	<% a = params[:word] %>
+	<% a= a.downcase %>
+	<% cont=0 %>
+	<% @posts.each do |p| %>
+		<% if p.text.downcase.index(a)!=nil %>
+			<h3><%=p.title%></h3>
+			<%=p.text%><br/>
+			<% cont+=1%>
+		<% end %>
+	<% end %>
+	<% if cont == 0 %>
+		<h2>No existe ningun post con "<%=a%>".</h2>
+	<% end %>
+</div>
