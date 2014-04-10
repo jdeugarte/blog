@@ -8,6 +8,7 @@
 		<% @posts.each do |p|%>
 
 			<h4><a href="/posts/show/<%= p.id %>"><%=p.title%></a></h4>
+			<%=p.category%><br>
 			<%=p.text%><br/>
 			<%=p.likes%> Likes<br/>
 			<p style="font-size: .8em">Creado: <%=p.created_at%></p>
@@ -16,6 +17,7 @@
 		<a href="/posts/delete/<%= p.id.to_s %>" class="btn btn-large btn-primary">Borrar</a></td>
 		<a href="/posts/update/<%= p.id.to_s %>" class="btn btn-large btn-primary">Modificar</a></td>
 		<a href="/posts/like/<%=p.id.to_s%>" class="btn btn-large btn-primary">Like</a>
+		<a href="/posts/dislike/<%=p.id.to_s%>" class="btn btn-large btn-primary">Dislike</a>
 		<%end%>
 	<%end%>
 </div>

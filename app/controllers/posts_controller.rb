@@ -14,6 +14,26 @@ class PostsController < ApplicationController
 		
 	end
 
+	def dislike
+		@post=Post.find(params[:id])
+		if @post.likes>=1
+			@post.likes=@post.likes-1
+			@post.save
+		end
+		redirect_to("/posts")
+
+	end
+
+	def disliked
+		@post = Post.find(params[:id])
+		a=@post.likes
+		if @post.likes>=1
+			@post.likes=a-1
+			@post.save
+		end
+		redirect_to('/posts/show/'+params[:id])
+	end
+
 	def reporte
 		@posts=Post.all
 	end
@@ -24,6 +44,10 @@ class PostsController < ApplicationController
 		@post.likes=a+1
 		@post.save
 		redirect_to('/posts/show/'+params[:id])
+	end
+
+	def search_category
+		@posts=Post.where(category: params[:category])
 	end
 	
 	def search
@@ -63,6 +87,6 @@ class PostsController < ApplicationController
 	end
 	
 	def post_params
-		params.require(:post).permit(:title, :text)
+		params.require(:post).permit(:title, :category, :text)
 	end
 end

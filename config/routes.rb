@@ -5,6 +5,8 @@ Blog::Application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'posts#index'
+  get '/posts/search_category' => 'posts#search_category'
+  post '/posts/historial/:id' => ' history_posts#create'
   get '/posts/search'=>'posts#search'
   get '/posts' =>'posts#index'
   post '/posts/create' => 'posts#create'
@@ -12,6 +14,8 @@ Blog::Application.routes.draw do
   get '/posts/update/:id' => 'posts#update'
   post '/posts/edit/:id' =>'posts#edit'
   get '/posts/delete/:id' => 'posts#delete'
+  get '/posts/dislike/:id' => 'posts#dislike'
+  get '/posts/disliked/:id' => 'posts#disliked'
   get '/posts/like/:id' => 'posts#like'
   get '/posts/liked/:id' => 'posts#liked'
   get '/posts/search' => 'post#search'

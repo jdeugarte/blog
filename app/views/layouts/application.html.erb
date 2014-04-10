@@ -21,9 +21,14 @@
               <li><%= link_to "Reporte",    '/posts/reporte' %></li>
               <li>
                 <form action="/posts/search" method="get">
-                <input tyoe="text" name="word" value ="" size="100">
+                <input type="text" name="word" value ="" size="100">
                 <input type="submit" name="commit" value="Buscar"></form>
-            </li>
+              </li>
+              <li>
+                <form action="/posts/search_category" method="get">
+                <input type="text" name="category" value ="" size="20   ">
+                <input type="submit" name="commit" value="Buscar Por Categoria"></form>
+              </li>
             </ul>
           </nav>
         </div>

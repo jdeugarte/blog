@@ -1,0 +1,9 @@
+<div class="center hero-unit">
+	<%@posts.each do |p|%>
+			<h4><a href="/posts/show/<%= p.id %>"><%=p.title%></a></h4>
+			<%=p.category%><br>
+			<%=p.text%><br/>
+			<%=p.likes%> Likes<br/>
+			<p style="font-size: .8em">Creado: <%=p.created_at%></p>
+	<%end%>
+</div>

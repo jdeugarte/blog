@@ -3,6 +3,7 @@
  <%= @post.text%><br/>
  <%= @post.likes%> Likes<br/> 
  <a href="/posts/liked/<%=@post.id.to_s%>" class="btn btn-large btn-primary">Like</a>
+ <a href="/posts/disliked/<%=@post.id.to_s%>" class="btn btn-large btn-primary">Dislike</a>
  <h2>Comentarios</h2>
  <% @post.comments.each do |c| %>
  	<%=c.commenter%><br/>

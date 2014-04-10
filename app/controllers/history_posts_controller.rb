@@ -1,0 +1,2 @@
+class HistoryPostsController < ApplicationController
+end
